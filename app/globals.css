@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+.heartbeat {
+  animation: pulse 4s infinite;
+  filter: drop-shadow(0 0 3px rgba(185, 15, 60, 0.4));
+}
+
+@keyframes pulse {
+  0% {
+    stroke-dasharray: 0 1000;
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+    stroke-width: 2;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 3;
+  }
+  100% {
+    stroke-dasharray: 1000 0;
+    stroke-dashoffset: -1000;
+    opacity: 0.5;
+    stroke-width: 2;
+  }
+}
+
+.border-3 {
+  border-width: 3px;
+}
